@@ -9,12 +9,23 @@ authors = [
     {name = "Jianyuan Wang", email = "jianyuan@robots.ox.ac.uk"},
 ]
 dependencies = [
+    "torch>=2.3",
+    "torchvision>=0.18",
     "numpy<2",
     "Pillow",
     "einops",
     "safetensors",
     "opencv-python",
 ]
+
+[[tool.uv.index]]
+name = "pytorch-cu128"
+url = "https://download.pytorch.org/whl/cu128"
+explicit = true
+
+[tool.uv.sources]
+torch = { index = "pytorch-cu128" }
+torchvision = { index = "pytorch-cu128" }
 
 [project.optional-dependencies]
 demo = [
